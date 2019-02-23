@@ -5,6 +5,7 @@
 
 data = "کیا حال ہے آپ کا؟"  # Add any Urdu text here.
 
+
 def tokenize(data):
     token = []
 
@@ -18,5 +19,24 @@ def tokenize(data):
             word = ''
 
     return(token)
+
+
+def tokenize_v2(data):
+
+    start_index = 0
+    end_index = 0
+
+    token = []
+
+    for c in data:
+        end_index += 1
+        if (c == ' '):
+            token.append(data[start_index:end_index])
+            start_index = end_index
+        else:
+            continue
+    return token
+
+
 
 print(tokenize(data))
